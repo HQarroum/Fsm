@@ -2,7 +2,7 @@
 
 ## Engineering - Fsm
 
-A tiny implementation of a finite state machine.
+A tiny implementation of a finite state machine written in Javascript.
 
 Current version: **1.0.3**
 
@@ -10,12 +10,11 @@ Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
 ## Building
 
-This project uses `Grunt` as its build management system and `Bower` as its dependency management system.
+This project uses `Grunt` as its build system and `Bower` amd `NPM` as dependency management systems.
 
-Grunt uses the `Gruntfile.js` to know how to build the project, and will as a *default* task build the project
-and copy the binaries in the `dist/` folder.
+Grunt uses the `Gruntfile.js` file to actually build the project, and will as a *default* task copy the produced binaries in the `dist/` folder.
 
-Grunt relies on `Node.js` and `NPM` to execute tasks, so you will need to ensure they are available on your build machine.
+Grunt relies on `Node.js` to execute the tasks required to build the project, so you will need to ensure that it is available on your build machine.
 
 To install Grunt, its modules, and fetch the Bower dependencies of the project you will need to run the following command :
 
@@ -25,7 +24,7 @@ To install Grunt, its modules, and fetch the Bower dependencies of the project y
 npm install
 ```
 
-To run a build using the default task, simply run the following command :
+To run a build using the default task, simply run the following :
 
 ```bash
 grunt
@@ -33,10 +32,10 @@ grunt
 
 ### Deployment
 
-You can use Grunt to deploy this project in two ways :
+If you want to version the produced binaries, you can use Grunt to deploy this project in two ways :
 
- - Push the built binaries to the `release` branch associated with the Git repository of this project
- - Run the previous task, and additionally, tag the binaries with the project's `package.json` version
+ - Pushing the built binaries to the `release` branch associated with the Git repository of this project
+ - Push the binaries to the `release` branch, and additionally, tag the binaries with the project's `package.json` version
  
 To deploy the project in a continuous integration system, or simply using your development machine, you can use one, or both of the following commands :
 
@@ -90,7 +89,7 @@ var state = new Fsm.State({
      */
     onEvent: function (event) {
       // Do something with the
-      // `event`.
+      // received `event`.
     },
       
     /**
@@ -115,9 +114,9 @@ fsm.start(state);
 
 ### Playing around with events
 
-Often, you will want states to react to given events by executing actions and transitioning between one another.
+More often than not, you will want states to react to received events by executing actions and transitioning between one another.
 
-This can be achieved through very simple interfaces such as `postEvent` and `transitionTo` :
+This can be achieved through the `postEvent` and `transitionTo` primitives :
 
 ```javascript
 /**
@@ -169,7 +168,7 @@ Initialized !
 
 ## Example
 
-We will as an example of a real life problem modelize how an elevator actually work. We will implement the bare minimum functions of an elevator using our state machine.
+We will as an example of a real life problem modelize how an elevator actually work. We will implement the bare minimum functions provided by an elevator using our state machine.
 
 For the sake of simplicity, our `Elevator` implementation will be really dummy, meaning that smart behaviours such as ordering of the levels given their location along the elevator path will not be implemented.
 
