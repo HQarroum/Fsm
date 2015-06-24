@@ -1,0 +1,27 @@
+{
+  "name": "fsm",
+  "version": "1.0.3",
+  "main": "fsm.js",
+  "authors": [
+    "Halim Qarroum <hqarroum@awox.com>"
+  ],
+  "description": "A tiny finite state machine.",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "fsm",
+    "state"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "requirejs": "~2.1.16",
+    "jasmine": "~2.2.1"
+  }
+}
