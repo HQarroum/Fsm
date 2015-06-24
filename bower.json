@@ -7,7 +7,9 @@
   ],
   "description": "A tiny finite state machine.",
   "moduleType": [
-    "amd"
+    "amd",
+    "globals",
+    "node"
   ],
   "keywords": [
     "fsm",
