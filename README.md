@@ -1,6 +1,6 @@
 ![Logo](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CPT-FSM-abcd.svg/326px-CPT-FSM-abcd.svg.png)
 
-## Engineering - Fsm
+## Fsm [![Build Status](https://api.travis-ci.org/HQarroum/Fsm.svg?branch=master)](https://travis-ci.org/HQarroum/Fsm)
 
 A tiny implementation of a finite state machine written in Javascript.
 
