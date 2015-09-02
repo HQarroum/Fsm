@@ -5,7 +5,7 @@
   "authors": [
     "Halim Qarroum"
   ],
-  "description": "A tiny finite state machine.",
+  "description": "A tiny implementation of a finite state machine.",
   "moduleType": [
     "amd",
     "globals",
