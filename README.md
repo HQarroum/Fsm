@@ -10,7 +10,7 @@ Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
 ## Building
 
-This project uses `Grunt` as its build system and `Bower` amd `NPM` as dependency management systems.
+This project uses `Grunt` as its build system and `Bower` and `NPM` as dependency management systems.
 
 Grunt uses the `Gruntfile.js` file to actually build the project, and will as a *default* task copy the produced binaries in the `dist/` folder.
 
