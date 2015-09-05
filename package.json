@@ -1,5 +1,5 @@
 {
-  "name": "fsm",
+  "name": "fsm.js",
   "version": "1.0.3",
   "description": "A tiny implementation of a finite state machine.",
   "main": "fsm.js",
