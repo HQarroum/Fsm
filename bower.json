@@ -13,7 +13,8 @@
   ],
   "keywords": [
     "fsm",
-    "state"
+    "state",
+    "machine"
   ],
   "ignore": [
     "**/.*",

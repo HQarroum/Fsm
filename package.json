@@ -12,7 +12,9 @@
     "postinstall": "node_modules/bower/bin/bower install"
   },
   "keywords": [
-    "cache"
+    "fsm",
+    "state",
+    "machine"
   ],
   "author": "Halim Qarroum",
   "license": "MIT",
