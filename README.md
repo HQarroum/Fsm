@@ -9,6 +9,20 @@ Current version: **1.0.3**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
+## Install
+
+##### Using NPM
+
+```bash
+npm install --save fsm.js
+```
+
+##### Using Bower
+
+```bash
+bower install --save fsm.js
+```
+
 ## Building
 
 This project uses `Grunt` as its build system and `Bower` and `NPM` as dependency management systems.
