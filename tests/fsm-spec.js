@@ -67,7 +67,7 @@ define(['fsm'], function (Fsm) {
                 name: 'green',
                 fsm: fsm,
                 onEvent: function (event) {
-                    if (event == 'red') {
+                    if (event === 'red') {
                         this.transitionTo(red);
                     }
                 }
