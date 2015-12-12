@@ -93,7 +93,7 @@ define(['fsm'], function (Fsm) {
                 fsm: fsm,
                 onEntry: function () {},
                 onExit: function () {},
-                onEvent: function (event) {}
+                onEvent: function () {}
             });
 
             var green = new Fsm.State({
@@ -101,7 +101,7 @@ define(['fsm'], function (Fsm) {
                 fsm: fsm,
                 onEntry: function () {},
                 onExit: function () {},
-                onEvent: function (event) {}
+                onEvent: function () {}
             });
 
             // Spying on the red state callbacks.
