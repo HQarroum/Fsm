@@ -8,8 +8,7 @@
     "url": "https://github.com/HQarroum/Fsm.git"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install"
+    "test": "grunt test"
   },
   "keywords": [
     "fsm",
