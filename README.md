@@ -5,7 +5,7 @@
 
 A tiny implementation of a finite state machine written in Javascript.
 
-Current version: **1.0.4**
+Current version: **1.0.5**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
