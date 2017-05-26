@@ -5,7 +5,7 @@
 
 A tiny implementation of a finite state machine written in Javascript.
 
-Current version: **1.0.5**
+Current version: **1.0.6**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
@@ -45,18 +45,18 @@ var state = new Fsm.State({
      * state.
      */
     name: 'initialization',
-    
+
     /**
      * The reference to the state machine.
      */
     fsm: fsm,
-    
+
     /**
      * An optional callback invoked
      * when the state is entered.
      */
     onEntry: function () {},
-     
+
     /**
      * An optional callback invoked upon
      * a received event.
@@ -65,7 +65,7 @@ var state = new Fsm.State({
       // Do something with the
       // received `event`.
     },
-      
+
     /**
      * An optional callback invoked
      * when the state is exited.
@@ -313,25 +313,6 @@ To run a build using the default task, simply run the following :
 
 ```bash
 grunt
-```
-
-### Deployment
-
-If you want to version the produced binaries, you can use Grunt to deploy this project in two ways :
-
- - Pushing the built binaries to the `release` branch associated with the Git repository of this project
- - Push the binaries to the `release` branch, and additionally, tag the binaries with the project's `package.json` version
- 
-To deploy the project in a continuous integration system, or simply using your development machine, you can use one, or both of the following commands :
-
-```bash
-# This will build the project and push the binaries to
-# the `release` branch.
-grunt release
-
-# This will do the same as the previous command, but will
-# also tag the binaries on the remote Git origin.
-grunt tag
 ```
 
 ## Tests
