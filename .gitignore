@@ -6,6 +6,9 @@ libs/
 ### Reporters output ###
 reports/
 
+### Bower ###
+bower_components
+
 ### Node ###
 # Logs
 logs
