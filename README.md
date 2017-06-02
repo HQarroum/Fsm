@@ -1,6 +1,8 @@
 ![Logo](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CPT-FSM-abcd.svg/326px-CPT-FSM-abcd.svg.png)
 
 ## Fsm
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/HQarroum/Fsm.svg)](https://greenkeeper.io/)
 [![Build Status](https://api.travis-ci.org/HQarroum/Fsm.svg?branch=master)](https://travis-ci.org/HQarroum/Fsm) [![Code Climate](https://codeclimate.com/repos/55e340dce30ba071d900bc0f/badges/c09e5e1811845c0f344d/gpa.svg)](https://codeclimate.com/repos/55e340dce30ba071d900bc0f/feed)
 
 A tiny implementation of a finite state machine written in Javascript.
