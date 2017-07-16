@@ -1,4 +1,3 @@
-var should = require('should');
 var Fsm = require('../fsm.js');
 var expect = require('expect');
 
