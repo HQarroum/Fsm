@@ -27,6 +27,7 @@ bower install --save fsm.js
 ## Usage
 
 ### Creating the FSM
+
 To create an instance of the state machine you simply have to call its constructor :
 
 ```javascript
@@ -143,7 +144,7 @@ Initialized !
 
 ## Example
 
-We will as an example of a real life problem modelize how an elevator actually work. We will implement the bare minimum functions provided by an elevator using our state machine.
+In this example, we will as an example of a real life problem modelize how an elevator actually work. We will implement the bare minimum functions provided by an elevator using our state machine.
 
 For the sake of simplicity, our `Elevator` implementation will be really dummy, meaning that smart behaviours such as ordering of the levels given their location along the elevator path will not be implemented.
 
@@ -175,7 +176,7 @@ var Elevator = function () {
       name: 'open',
       onEntry: function () {
         var state = this;
-
+        
         console.log('Door opened at level', self.level);
         setTimeout(function () {
           state.transitionTo(closed);
