@@ -41,38 +41,37 @@ A `state` is an instance of a `Fsm.State` object. It takes a reference to the st
 As you can see below, creating a state is pretty straightforward :
 
 ```javascript
-var state = new Fsm.State({
-    /**
-     * An optional name for the
-     * state.
-     */
-    name: 'initialization',
+const state = new Fsm.State({
 
-    /**
-     * The reference to the state machine.
-     */
-    fsm: fsm,
+  /**
+   * An optional name for the state.
+   */
+  name: 'initialization',
 
-    /**
-     * An optional callback invoked
-     * when the state is entered.
-     */
-    onEntry: function () {},
+  /**
+   * A reference to the used state machine.
+   */
+  fsm: fsm,
 
-    /**
-     * An optional callback invoked upon
-     * a received event.
-     */
-    onEvent: function (event) {
-      // Do something with the
-      // received `event`.
-    },
+  /**
+   * An optional callback invoked when the state is
+   * entered.
+   */
+  onEntry: () => {},
 
-    /**
-     * An optional callback invoked
-     * when the state is exited.
-     */
-    onExit: function () {}
+  /**
+   * An optional callback invoked upon a received
+   * event.
+   */
+  onEvent: (event) => {
+    // Do something with the received `event`.
+  },
+
+  /**
+   * An optional callback invoked when the state is
+   * exited.
+   */
+  onExit: function () {}
 });
 ```
 
@@ -100,7 +99,7 @@ const initialization = new Fsm.State({
   fsm: fsm,
   name: 'initialization',
   onEntry: () => console.log('Initialization ...'),
-  onExit: () => console.log('Initialization done'),
+  onExit:  () => console.log('Initialization completed.'),
   onEvent: (event) => {
     if (event === 'init.done') {
       this.transitionTo(initialized);
@@ -114,7 +113,7 @@ const initialization = new Fsm.State({
 const initialized = new Fsm.State({
   fsm: fsm,
   name: 'initialized',
-  onEntry: () => console.log('Initialized !')
+  onEntry: () => console.log('System initialized !')
 });
 
 // Starting the fsm.
