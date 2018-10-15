@@ -90,48 +90,38 @@ fsm.start(state);
 
 ### Playing around with events
 
-More often than not, you will want states to react to received events by executing actions and transitioning between one another.
-
-This can be achieved through the `postEvent` and `transitionTo` primitives :
+Usually, you will want states to react to received events by executing actions and transitioning between one another. This can be achieved through the `postEvent` and `transitionTo` primitives as shown in the example below.
 
 ```javascript
 /**
- * The `initializing` state.
+ * The `initialization` state of the system.
  */
-var initializing = new Fsm.State({
+const initialization = new Fsm.State({
   fsm: fsm,
-  name: 'initializing',
-  onEntry: function () {
-    console.log('Initializing');
-  },
-  onEvent: function (event) {
+  name: 'initialization',
+  onEntry: () => console.log('Initialization ...'),
+  onExit: () => console.log('Initialization done'),
+  onEvent: (event) => {
     if (event === 'init.done') {
       this.transitionTo(initialized);
     }
-  },
-  onExit: function () {
-    console.log('Initialization done');
   }
 });
 
 /**
  * The `initialized` state.
  */
-var initialized = new Fsm.State({
+const initialized = new Fsm.State({
   fsm: fsm,
   name: 'initialized',
-  onEntry: function () {
-    console.log('Initialized !');
-  }
+  onEntry: () => console.log('Initialized !')
 });
 
 // Starting the fsm.
 fsm.start(initializing);
 
 // Simulating an asynchronous event.
-setTimeout(function () {
-  fsm.postEvent('init.done');
-}, 1000);
+setTimeout(() => fsm.postEvent('init.done'), 1000);
 ```
 
 The above code will output :
