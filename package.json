@@ -1,6 +1,6 @@
 {
   "name": "fsm.js",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A tiny implementation of a finite state machine.",
   "main": "fsm.js",
   "repository": {
