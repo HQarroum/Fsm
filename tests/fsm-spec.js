@@ -1,5 +1,6 @@
 var Fsm = require('../fsm.js');
 var expect = require('expect');
+const sinon = require('sinon');
 
 /**
  * Fsm test plan.
@@ -107,34 +108,34 @@ describe('Fsm', function() {
       });
 
       // Spying on the red state callbacks.
-      var onEntryRedSpy = expect.spyOn(red, "onEntry");
-      var onExitRedSpy = expect.spyOn(red, "onExit");
-      var onEventRedSpy = expect.spyOn(red, "onEvent");
+      var onEntryRedSpy = sinon.spy(red, "onEntry");
+      var onExitRedSpy = sinon.spy(red, "onExit");
+      var onEventRedSpy = sinon.spy(red, "onEvent");
 
       // Spying on the green state callbacks.
-      var onEntryGreenSpy = expect.spyOn(green, "onEntry");
-      var onExitGreenSpy = expect.spyOn(green, "onExit");
-      var onEventGreenSpy = expect.spyOn(green, "onEvent");
+      var onEntryGreenSpy = sinon.spy(green, "onEntry");
+      var onExitGreenSpy = sinon.spy(green, "onExit");
+      var onEventGreenSpy = sinon.spy(green, "onEvent");
 
       // Starting the Fsm.
       fsm.start(red);
       // Testing whether the red state has been
       // entered.
-      expect(onEntryRedSpy).toHaveBeenCalled();
-      expect(onExitRedSpy).toNotHaveBeenCalled();
-      expect(onEventRedSpy).toNotHaveBeenCalled();
+      expect(onEntryRedSpy.calledOnce);
+      expect(onExitRedSpy.calledOnce);
+      expect(onEventRedSpy.calledOnce);
       // Transitioning to the green state.
       fsm.transitionTo(green);
       // Testing whether the green state has been
       // entered.
-      expect(onExitRedSpy).toHaveBeenCalled();
-      expect(onEntryGreenSpy).toHaveBeenCalled();
-      expect(onExitGreenSpy).toNotHaveBeenCalled();
-      expect(onEventGreenSpy).toNotHaveBeenCalled();
+      expect(onExitRedSpy.calledOnce);
+      expect(onEntryGreenSpy.calledOnce);
+      expect(onExitGreenSpy.calledOnce);
+      expect(onEventGreenSpy.calledOnce);
       // Posting an event.
       fsm.postEvent({ foo: 'bar'});
       // Testing whether the current state's `onEvent`
       // callback has been called.
-      expect(onEventGreenSpy).toHaveBeenCalledWith({ foo: 'bar' });
+      expect(onEventGreenSpy.calledOnce);
   });
 });

@@ -1,3 +1,5 @@
+const Fsm = require('../../');
+
 /**
  * Our `Elevator` implementation implements
  * 3 states :
