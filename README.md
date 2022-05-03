@@ -3,25 +3,18 @@
 ## Fsm
 
 [![Build Status](https://api.travis-ci.org/HQarroum/Fsm.svg?branch=master)](https://travis-ci.org/HQarroum/Fsm) [![CodeFactor](https://www.codefactor.io/repository/github/hqarroum/fsm/badge)](https://www.codefactor.io/repository/github/hqarroum/fsm)
+[![DeepSource](https://deepsource.io/gh/HQarroum/Fsm.svg/?label=active+issues&show_trend=true&token=n0J9M6_vrt266HkCkMLYQlft)](https://deepsource.io/gh/HQarroum/Fsm/?ref=repository-badge)
 
 A tiny implementation of a finite state machine written in Javascript.
 
-Current version: **1.0.8**
+Current version: **2.0.0**
 
 Lead Maintainer: [Halim Qarroum](mailto:hqarroum@awox.com)
 
 ## Install
 
-##### Using NPM
-
 ```bash
 npm install --save fsm.js
-```
-
-##### Using Bower
-
-```bash
-bower install --save fsm.js
 ```
 
 ## Usage
@@ -31,7 +24,7 @@ bower install --save fsm.js
 To create an instance of the state machine you simply have to call its constructor :
 
 ```javascript
-var fsm = new Fsm();
+const fsm = new Fsm();
 ```
 
 ### Creating a state
@@ -136,40 +129,3 @@ Initialized !
 In the [elevator example](https://github.com/HQarroum/Fsm/blob/master/examples/elevator/index.js), we implemented, as an example of a real life problem, the bare minimum functions provided by an elevator using a finite state machine.
 
 For the sake of simplicity, the implementation is really dummy, meaning that smart behaviours such as ordering of the levels given their location along the elevator path are not implemented.
-
-## Building
-
-This project uses `Grunt` as its build system and `Bower` and `NPM` as dependency management systems.
-
-Grunt uses the `Gruntfile.js` file to actually build the project, and will as a *default* task copy the produced binaries in the `dist/` folder.
-
-Grunt relies on `Node.js` to execute the tasks required to build the project, so you will need to ensure that it is available on your build machine.
-
-To install Grunt, its modules, and fetch the Bower dependencies of the project you will need to run the following command :
-
-```bash
-# This will install Grunt tasks and fetch the
-# required Bower module as a postinstall task.
-npm install
-```
-
-To run a build using the default task, simply run the following :
-
-```bash
-grunt
-```
-
-## Tests
-
-Tests are available in the `tests/` directory.
-
-You can either trigger them using `Jasmine JS` and its HTML presenter by opening `tests/index.html` in a browser, or trigger the
-following commands :
-
-```bash
-# Using grunt
-grunt
-
-# Using NPM
-npm test
-```

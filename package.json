@@ -1,15 +1,18 @@
 {
   "name": "fsm.js",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "description": "A tiny implementation of a finite state machine.",
   "main": "fsm.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/HQarroum/Fsm.git"
   },
   "scripts": {
-    "test": "npx grunt test",
-    "build": "npx grunt",
+    "build": "npx rollup -c",
+    "test": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "coverage": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "lint": "npx eslint .",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -23,15 +26,8 @@
     "url": "https://github.com/HQarroum/Fsm/issues"
   },
   "devDependencies": {
-    "expect": "^27.0.2",
-    "grunt": "^1.4.1",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-jshint": "^3.0.0",
-    "grunt-contrib-uglify-es": "^3.3.0",
-    "grunt-mocha-test": "^0.13.2",
-    "load-grunt-tasks": "^5.1.0",
-    "mocha": "^8.4.0",
-    "sinon": "^11.1.1",
-    "time-grunt": "^2.0.0"
+    "eslint": "^8.14.0",
+    "jest": "^28.0.3",
+    "sinon": "^11.1.2"
   }
 }
