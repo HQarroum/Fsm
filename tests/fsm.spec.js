@@ -5,7 +5,7 @@ import sinon from 'sinon';
  * Fsm test plan.
  */
 describe('Fsm', function() {
-  let fsm;
+  let fsm = null;
 
   /**
    * On each test, we create a new fsm.
@@ -52,6 +52,43 @@ describe('Fsm', function() {
   });
 
   /**
+   * Transition between states by providing
+   * parameters.
+   */
+   it('should be able to carry parameters between state transitions', function () {
+    let value = null;
+
+    // Creating a `red` state.
+    const red = new Fsm.State({
+      name: 'red',
+      fsm: fsm,
+      onEntry: (params) => {
+        value = params;
+      }
+    });
+
+    // Creating a `green` state.
+    const green = new Fsm.State({
+      name: 'green',
+      fsm: fsm,
+      onEntry: (params) => {
+        value = params;
+      }
+    });
+
+    // Starting the state machine in the `red` state.
+    fsm.start(red);
+    
+    // Transitioning to the `green` state.
+    fsm.transitionTo(green, { from: 'red' });
+    expect(value).toEqual({ from: 'red' });
+
+    // Transitioning back to the `red` state.
+    fsm.transitionTo(red, { from: 'green' });
+    expect(value).toEqual({ from: 'green' });
+  });
+
+  /**
    * Transition between states using events.
    */
   it('should be able to transition between states using events', function () {
@@ -61,7 +98,7 @@ describe('Fsm', function() {
       fsm: fsm,
       onEvent: function (event) {
         if (event === 'green') {
-            this.transitionTo(green);
+          this.transitionTo(green);
         }
       }
     });
@@ -72,7 +109,7 @@ describe('Fsm', function() {
       fsm: fsm,
       onEvent: function (event) {
         if (event === 'red') {
-            this.transitionTo(red);
+          this.transitionTo(red);
         }
       }
     });
@@ -93,17 +130,17 @@ describe('Fsm', function() {
     const red = new Fsm.State({
       name: 'red',
       fsm: fsm,
-      onEntry: function () {},
-      onExit: function () {},
-      onEvent: function () {}
+      onEntry: () => {},
+      onExit: () => {},
+      onEvent: () => {}
     });
 
     const green = new Fsm.State({
       name: 'green',
       fsm: fsm,
-      onEntry: function () {},
-      onExit: function () {},
-      onEvent: function () {}
+      onEntry: () => {},
+      onExit: () => {},
+      onEvent: () => {}
     });
 
     // Spying on the red state callbacks.
