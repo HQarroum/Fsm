@@ -4,7 +4,7 @@ node_js:
   - '14'
   - '16'
 before_install:
-  - npm install -g istanbul codecov
+  - npm install -g codecov
 install:
   - npm install
 script:
