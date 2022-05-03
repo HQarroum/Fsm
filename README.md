@@ -2,7 +2,8 @@
 
 ## Fsm
 
-[![Build Status](https://api.travis-ci.org/HQarroum/Fsm.svg?branch=master)](https://travis-ci.org/HQarroum/Fsm) [![CodeFactor](https://www.codefactor.io/repository/github/hqarroum/fsm/badge)](https://www.codefactor.io/repository/github/hqarroum/fsm)
+[![Build Status](https://app.travis-ci.com/HQarroum/Fsm.svg?branch=master)](https://app.travis-ci.com/HQarroum/Fsm)
+[![CodeFactor](https://www.codefactor.io/repository/github/hqarroum/fsm/badge)](https://www.codefactor.io/repository/github/hqarroum/fsm)
 [![DeepSource](https://deepsource.io/gh/HQarroum/Fsm.svg/?label=active+issues&show_trend=true&token=n0J9M6_vrt266HkCkMLYQlft)](https://deepsource.io/gh/HQarroum/Fsm/?ref=repository-badge)
 
 A tiny implementation of a finite state machine written in Javascript.

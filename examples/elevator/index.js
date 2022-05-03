@@ -1,4 +1,4 @@
-const Fsm = require('../../');
+import Fsm from '../../fsm.js';
 
 /**
  * Our `Elevator` implementation implements
