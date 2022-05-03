@@ -4,23 +4,23 @@ import sinon from 'sinon';
 /**
  * Fsm test plan.
  */
-describe('Fsm', function() {
+describe('Fsm', () => {
   let fsm = null;
 
   /**
    * On each test, we create a new fsm.
    */
-  beforeEach(function () {
+  beforeEach(() => {
     fsm = new Fsm();
   });
 
   /**
    * Initial state test.
    */
-  it('should be able to be started given a new state', function () {
+  it('should be able to be started given a new state', () => {
     const state = new Fsm.State({
-      name: 'state',
-      fsm: fsm
+      fsm,
+      name: 'state'
     });
 
     expect(state.name()).toEqual('state');
@@ -31,17 +31,17 @@ describe('Fsm', function() {
   /**
    * Transition between states.
    */
-  it('should be able to transition between states', function () {
+  it('should be able to transition between states', () => {
     // Creating a `red` state.
     const red = new Fsm.State({
-      name: 'red',
-      fsm: fsm
+      fsm,
+      name: 'red'
     });
 
     // Creating a `green` state.
     const green = new Fsm.State({
-      name: 'green',
-      fsm: fsm
+      fsm,
+      name: 'green'
     });
 
     fsm.start(red);
@@ -55,13 +55,13 @@ describe('Fsm', function() {
    * Transition between states by providing
    * parameters.
    */
-   it('should be able to carry parameters between state transitions', function () {
+   it('should be able to carry parameters between state transitions', () => {
     let value = null;
 
     // Creating a `red` state.
     const red = new Fsm.State({
+      fsm,
       name: 'red',
-      fsm: fsm,
       onEntry: (params) => {
         value = params;
       }
@@ -69,8 +69,8 @@ describe('Fsm', function() {
 
     // Creating a `green` state.
     const green = new Fsm.State({
+      fsm,
       name: 'green',
-      fsm: fsm,
       onEntry: (params) => {
         value = params;
       }
@@ -91,11 +91,11 @@ describe('Fsm', function() {
   /**
    * Transition between states using events.
    */
-  it('should be able to transition between states using events', function () {
+  it('should be able to transition between states using events', () => {
     // Creating a `red` state.
     const red = new Fsm.State({
+      fsm,
       name: 'red',
-      fsm: fsm,
       onEvent: function (event) {
         if (event === 'green') {
           this.transitionTo(green);
@@ -105,8 +105,8 @@ describe('Fsm', function() {
 
     // Creating a `green` state.
     const green = new Fsm.State({
+      fsm,
       name: 'green',
-      fsm: fsm,
       onEvent: function (event) {
         if (event === 'red') {
           this.transitionTo(red);
@@ -126,18 +126,18 @@ describe('Fsm', function() {
   /**
    * State lifecycle test.
    */
-  it('should respect the states lifecycle', function () {
+  it('should respect the states lifecycle', () => {
     const red = new Fsm.State({
+      fsm,
       name: 'red',
-      fsm: fsm,
       onEntry: () => {},
       onExit: () => {},
       onEvent: () => {}
     });
 
     const green = new Fsm.State({
+      fsm,
       name: 'green',
-      fsm: fsm,
       onEntry: () => {},
       onExit: () => {},
       onEvent: () => {}
