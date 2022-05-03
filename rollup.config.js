@@ -6,7 +6,8 @@ export default [
     output: {
       file: 'dist/fsm.cjs',
       format: 'cjs',
-      exports: 'default'
+      exports: 'default',
+      plugins: [terser()]
     }
   },
   {

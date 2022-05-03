@@ -11,7 +11,7 @@
  * The state machine constructor.
  */
 const Fsm = function () {
-  this.currentState = undefined;
+  this.currentState = null;
 };
 
 /**
