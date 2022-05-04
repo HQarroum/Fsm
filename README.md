@@ -20,6 +20,14 @@ npm install --save fsm.js
 
 ## Usage
 
+### Import the FSM
+
+`Fsm.js` is distributed as an ESM module that you can import in your implementation.
+
+```javascript
+const Fsm = import Fsm from 'fsm.js';
+```
+
 ### Creating the FSM
 
 To create an instance of the state machine you simply have to call its constructor :
