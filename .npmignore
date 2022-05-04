@@ -17,9 +17,6 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# Build
-dist/
-
 # Dependency directory
 # Commenting this out is preferred by some people, see
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-

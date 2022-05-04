@@ -2,8 +2,14 @@
   "name": "fsm.js",
   "version": "2.0.0",
   "description": "A tiny implementation of a finite state machine.",
-  "main": "fsm.js",
+  "main": "dist/fsm.esm.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "require": "./dist/fsm.cjs",
+      "import": "./dist/fsm.esm.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/HQarroum/Fsm.git"
@@ -11,7 +17,6 @@
   "scripts": {
     "build": "npx rollup -c",
     "test": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "coverage": "npx cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage",
     "lint": "npx eslint .",
     "prepublishOnly": "npm run build"
   },

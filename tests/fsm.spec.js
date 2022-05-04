@@ -124,6 +124,24 @@ describe('Fsm', () => {
   });
 
   /**
+   * Invalid state test.
+   */
+   it('should not be able to transition to an invalid state', () => {
+    const state = new Fsm.State({
+      fsm,
+      name: 'state'
+    });
+
+    fsm.start(state);
+    try {
+      fsm.transitionTo({});
+      expect(true).toBe(false);
+    } catch (e) {
+      expect(true).toBe(true);
+    }
+  });
+
+  /**
    * State lifecycle test.
    */
   it('should respect the states lifecycle', () => {

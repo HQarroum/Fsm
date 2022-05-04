@@ -19,7 +19,7 @@ const Fsm = function () {
  * given state.
  */
 Fsm.prototype.transitionTo = function (state, args) {
-  if (!state) {
+  if (!(state instanceof Fsm.State)) {
     throw new Error('Expected a valid state');
   }
   if (this.currentState !== state) {
@@ -54,7 +54,7 @@ Fsm.prototype.state = function () {
  * given state.
  */
 Fsm.prototype.start = function (state) {
-  if (!state) {
+  if (!(state instanceof Fsm.State)) {
     throw new Error('Expected a valid state');
   }
   if (!this.currentState) {
