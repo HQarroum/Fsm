@@ -73,7 +73,7 @@ const state = new Fsm.State({
    * An optional callback invoked when the state is
    * exited.
    */
-  onExit: function () {}
+  onExit: () => {}
 });
 ```
 
@@ -82,10 +82,6 @@ const state = new Fsm.State({
 When a state machine is created, it is stopped by default. To start a state machine you need to give it a reference to the initial state in which it should be starting :
 
 ```javascript
-/**
- * This will cause the given `state`
- * to be entered.
- */
 fsm.start(state);
 ```
 
@@ -101,7 +97,7 @@ const initialization = new Fsm.State({
   fsm: fsm,
   name: 'initialization',
   onEntry: () => console.log('Initialization ...'),
-  onExit:  () => console.log('Initialization completed.'),
+  onExit:  () => console.log('Initialization completed'),
   onEvent: (event) => {
     if (event === 'init.done') {
       this.transitionTo(initialized);
@@ -115,7 +111,7 @@ const initialization = new Fsm.State({
 const initialized = new Fsm.State({
   fsm: fsm,
   name: 'initialized',
-  onEntry: () => console.log('System initialized !')
+  onEntry: () => console.log('System initialized')
 });
 
 // Starting the fsm.
@@ -127,10 +123,10 @@ setTimeout(() => fsm.postEvent('init.done'), 1000);
 
 The above code will output :
 
-```
-Initializing
-Initialization done
-Initialized !
+```bash
+Initialization ...
+Initialization completed
+System initialized
 ```
 
 ## Example
