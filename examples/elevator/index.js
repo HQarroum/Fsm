@@ -1,4 +1,4 @@
-import Fsm from '../../fsm.js';
+import Fsm from 'fsm.js';
 
 /**
  * Our `Elevator` implementation implements

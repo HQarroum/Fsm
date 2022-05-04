@@ -1,0 +1,16 @@
+{
+  "name": "elevator",
+  "version": "1.0.0",
+  "description": "An example of elevator implemented using a finite state machine.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Halim Qarroum <hqm.post@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fsm.js": "file:../.."
+  }
+}
