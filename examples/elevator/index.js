@@ -25,12 +25,10 @@ const Elevator = function () {
   const open = new Fsm.State({
     fsm: self.fsm,
     name: 'open',
-    onEntry: function () {
-      const state = this;
-      
+    onEntry: function () {      
       console.log('Door opened at level', self.level);
-      setTimeout(function () {
-        state.transitionTo(closed);
+      setTimeout(() => {
+        this.transitionTo(closed);
       }, 2000);
     },
 
@@ -39,7 +37,7 @@ const Elevator = function () {
      * we push any user request to go to
      * a level on the level stack.
      */
-    onEvent: function (event) {
+    onEvent: (event) => {
       if (event.name === 'goToLevel'
         && event.level !== self.level) {
         self.pushLevel(event.level);
@@ -89,14 +87,13 @@ const Elevator = function () {
     name: 'moving',
 
     onEntry: function () {
-      const state = this;
       const next  = self.stack.shift();
 
       console.log('Moving to level', next);
-      setTimeout(function () {
+      setTimeout(() => {
         console.log('Reached level', next);
         self.level = next;
-        state.transitionTo(open);
+        this.transitionTo(open);
       }, TIME_PER_LEVEL * Math.abs(next - self.level));
     },
 
@@ -106,7 +103,7 @@ const Elevator = function () {
      * doors, we push any user request to go to
      * a level on the level stack.
      */
-    onEvent: function (event) {
+    onEvent: (event) => {
       if (event.name === 'goToLevel') {
         self.pushLevel(event.level);
       }
