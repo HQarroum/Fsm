@@ -25,7 +25,7 @@ npm install --save fsm.js
 `Fsm.js` is distributed as an ESM module that you can import in your implementation.
 
 ```javascript
-const Fsm = import Fsm from 'fsm.js';
+import Fsm from 'fsm.js';
 ```
 
 ### Creating the FSM
